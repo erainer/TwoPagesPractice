@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">MCC Login</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
+    <string name="loginHint">Enter a user name</string>
+    <string name="LoginButtonTxt">Login</string>
+    <string name="firstNameHint">First Name</string>
+    <string name="lastNameHint">Last Name</string>
+    <string name="phoneHint">Phone</string>
+    <string name="dateOfBirthHint">Date of Birth</string>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    <string name="dayHint">Day</string>
+    <string name="yearHint">Year</string>
+    <string name="cert">Certificate</string>
+    <string name="twoYr">Associates</string>
+    <string name="major">Major</string>
+    <string name="btnNext">Next</string>
+    <string-array name="listCert">
+        <item>Android Certificate</item>
+        <item>IOS MobleCertificate</item>
+        <item>Programming Certificate</item>
+    </string-array>
+    <string-array name="listDegree">
+        <item>Digital Media</item>
+        <item>Mobile Development</item>
+        <item>Web Development</item>
+    </string-array>
+    <string name="title_activity_third_page">ThirdPage</string>
+</resources>
