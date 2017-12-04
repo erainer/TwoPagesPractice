@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 
 public class SecondPage extends AppCompatActivity {
 
@@ -24,14 +26,34 @@ public class SecondPage extends AppCompatActivity {
 
 
         final Spinner monthSP = (Spinner) findViewById(R.id.monthSP);
+        final TextView certSPLB = (TextView) findViewById(R.id.certSPLabel);
+        final TextView degreeSPLB = (TextView) findViewById(R.id.degreeSPLabel);
         final Spinner certSP = (Spinner) findViewById(R.id.certSP);
         final Spinner degreeSP = (Spinner) findViewById(R.id.degreeSP);
 
         Switch certDegSW = (Switch) findViewById(R.id.certDegSW);
 
+        certDegSW.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    degreeSP.setVisibility(View.VISIBLE);
+                    degreeSPLB.setVisibility(View.VISIBLE);
+                    certSPLB.setVisibility(View.GONE);
+                    certSP.setVisibility(View.GONE);
+                }else{
+                    degreeSP.setVisibility(View.GONE);
+                    degreeSPLB.setVisibility(View.GONE);
+                    certSPLB.setVisibility(View.VISIBLE);
+                    certSP.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 if (checkData()) {
                     Intent nextScreen = new Intent(SecondPage.this, ThirdPage.class);
                     String birthday = "";
@@ -43,6 +65,7 @@ public class SecondPage extends AppCompatActivity {
 
                     //Start Activity
                     startActivity(nextScreen);
+                    setContentView(R.layout.activity_third_page);
                 }
             }
         });
