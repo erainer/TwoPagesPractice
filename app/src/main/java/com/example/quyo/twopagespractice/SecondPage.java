@@ -22,7 +22,7 @@ public class SecondPage extends AppCompatActivity {
         final EditText phone = (EditText) findViewById(R.id.phoneBox);
         final EditText day = (EditText) findViewById(R.id.dayBox);
         final EditText year = (EditText) findViewById(R.id.yearBox);
-        Button next = (Button) findViewById(R.id.nextBtn);
+        final Button next = (Button) findViewById(R.id.nextBtn);
 
 
         final Spinner monthSP = (Spinner) findViewById(R.id.monthSP);
@@ -31,7 +31,7 @@ public class SecondPage extends AppCompatActivity {
         final Spinner certSP = (Spinner) findViewById(R.id.certSP);
         final Spinner degreeSP = (Spinner) findViewById(R.id.degreeSP);
 
-        Switch certDegSW = (Switch) findViewById(R.id.certDegSW);
+        final Switch certDegSW = (Switch) findViewById(R.id.certDegSW);
 
         certDegSW.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -53,20 +53,20 @@ public class SecondPage extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 if (checkData()) {
                     Intent nextScreen = new Intent(SecondPage.this, ThirdPage.class);
-                    String birthday = "";
-                    birthday = monthSP.getSelectedItem().toString() + "/" + day.getText().toString() + "/" + year.getText().toString();
+                    String birthDate = "";
+                    birthDate = monthSP.getSelectedItem().toString() + "/" + day.getText().toString() + "/" + year.getText().toString();
                     nextScreen.putExtra("FirstName", firstName.getText().toString());
                     nextScreen.putExtra("LastName", lastName.getText().toString());
                     nextScreen.putExtra("Phone", phone.getText().toString());
-                    nextScreen.putExtra("Birthday", birthday);
+                    nextScreen.putExtra("BirthDate", birthDate);
 
                     //Start Activity
                     startActivity(nextScreen);
-                    setContentView(R.layout.activity_third_page);
                 }
+                setContentView(R.layout.activity_third_page);
             }
         });
     }

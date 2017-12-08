@@ -12,11 +12,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         final EditText id = (EditText) findViewById(R.id.loginBox);
         final EditText password = (EditText) findViewById(R.id.passwordBox);
         final TextView incorrect = (TextView) findViewById(R.id.incorrectTxt);
-        Button loginButton = (Button) findViewById(R.id.loginBtn);
+        final Button loginButton = (Button) findViewById(R.id.loginBtn);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
